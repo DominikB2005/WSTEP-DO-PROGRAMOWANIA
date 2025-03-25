@@ -1,0 +1,7 @@
+C:\Users\Domino\source\repos\ZADANIA nr 1\Zadanie 7\obj\Debug\Zadanie 7.csproj.AssemblyReference.cache
+C:\Users\Domino\source\repos\ZADANIA nr 1\Zadanie 7\obj\Debug\Zadanie 7.csproj.CoreCompileInputs.cache
+C:\Users\Domino\source\repos\ZADANIA nr 1\Zadanie 7\bin\Debug\Zadanie 7.exe.config
+C:\Users\Domino\source\repos\ZADANIA nr 1\Zadanie 7\bin\Debug\Zadanie 7.exe
+C:\Users\Domino\source\repos\ZADANIA nr 1\Zadanie 7\bin\Debug\Zadanie 7.pdb
+C:\Users\Domino\source\repos\ZADANIA nr 1\Zadanie 7\obj\Debug\Zadanie 7.exe
+C:\Users\Domino\source\repos\ZADANIA nr 1\Zadanie 7\obj\Debug\Zadanie 7.pdb
