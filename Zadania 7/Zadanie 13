@@ -1,0 +1,37 @@
+//Napisz funkcję o nazwie czy_kw, która stwierdza, czy zadana jako parametr liczba całkowita
+// jest kwadratem pewnej liczby całkowitej. Liczby będące kwadratami liczb całkowitych to 1, 4,
+// 9, 16, 25, itd. Wartością funkcji ma być jeden, jeśli liczba spełnia warunek lub zero w
+// przeciwnym przypadku. Napisz program testujący utworzoną funkcję czy_
+// kw.
+// Proszę nie korzystać z funkcji matematycznej Math.Sqrt().
+
+using System;
+
+namespace zadanie_13
+{
+    class Program
+    {
+        static int czy_kw(int liczba)
+        {
+            if (liczba < 0) return 0; // liczby ujemne nie są kwadratami
+
+            for (int i = 0; i * i <= liczba; i++)
+            {
+                if (i * i == liczba)
+                    return 1;
+            }
+
+            return 0;
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("czy 4 jest kwadratem liczy calkowitej?  {0}", czy_kw(4));     
+            Console.WriteLine("czy 20 jest kwadratem liczy calkowitej?  {0}", czy_kw(20));   
+            Console.WriteLine("czy 0 jest kwadratem liczy calkowitej?  {0}", czy_kw(0));     
+            Console.WriteLine("czy -9 jest kwadratem liczy calkowitej?  {0}", czy_kw(-9));   
+
+            Console.ReadKey(true);
+        }
+    }
+}
