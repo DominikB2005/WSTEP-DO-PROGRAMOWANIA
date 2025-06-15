@@ -1,0 +1,22 @@
+//Wczytaj liczbę naturalną n i wypisz na ekranie tą liczbę w systemie szesnastkowym.
+// Wskazówka: 10-A, 11-B, 12-C, 13-D, 14-E, 15-F.
+int[] tab = new int[1000];
+int i = 0, j, liczba;
+
+Console.Write("podaj liczbe naturalna: ");
+liczba = Convert.ToInt32(Console.ReadLine());
+
+while (liczba > 0)
+{
+    tab[i++] = liczba % 16;
+    liczba = liczba / 16;
+}
+
+for (j = i - 1; j >= 0; j--)
+{
+    if (tab[j] >= 10)
+        Console.Write((char)('A' + tab[j] - 10));  // 10->A, 11->B, ...
+    else
+        Console.Write(tab[j]);
+}
+Console.ReadKey(true);
