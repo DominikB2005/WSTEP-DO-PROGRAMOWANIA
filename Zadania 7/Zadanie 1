@@ -1,0 +1,20 @@
+//Napisz funkcję o nazwie suma wyznaczającą sumę jej dwóch argumentów będących liczbami
+// całkowitymi. Napisz program wykorzystujący funkcję suma.
+using System;
+namespace zadanie_1
+{
+    class Program
+    {
+        static int suma(int a, int b)
+        {
+            return a + b;
+        }
+
+//testowanie funkcji
+        static void Main(string[] args)
+        {
+            Console.WriteLine("1+2={0}", suma(1, 2));
+            Console.ReadKey(true);
+        }
+    }
+}
