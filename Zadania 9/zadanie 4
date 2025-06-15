@@ -1,0 +1,73 @@
+//Napisać program posiadający tablicę nazw owoców. Stwórz menu umożliwiające
+// zrealizowanie operacji na tablicy: dodawanie nowych owoców, usuwanie istniejących
+// owoców, modyfikowanie istniejących owoców, wyświetlanie listy owoców.
+// Oprogramuj odpowiednio pozycje menu i sprawdź, czy program poprawnie działa.
+
+using System;
+namespace zadanie3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int N = 10;
+            string[] owoce = new string[N];
+            int licznik = 0;
+            int wybor, numer, i;
+            do
+            {
+                Console.WriteLine("\nMENU:\n1-dodaj\n2-modyfikuj\n3-usun");
+                Console.Write("4-wypisz\n0-konic\ntwoj wybor: ");
+                wybor = Convert.ToInt32(Console.ReadLine());
+                switch (wybor)
+                {
+                    case 0: break;
+                    case 1: //dodawanie
+                        Console.Write("podaj owoc: ");
+                        owoce[licznik++] = Console.ReadLine();
+                        break;
+                    case 2: //modyfikowanie
+                        Console.Write("podaj numer owocu do modyfikacji: ");
+                        numer = Convert.ToInt32(Console.ReadLine());
+                        if ((numer <= licznik) && (numer > 0))
+                        {
+                            Console.WriteLine("obecna nazwa: {0}", owoce[numer-1]);
+                            Console.Write("podaj nowa nazwe: ");
+                            owoce[numer-1] = Console.ReadLine();
+                        }
+                        else Console.WriteLine("blad");
+
+                        break;
+                    case 3: //usuwanie
+                        if (licznik == 0) Console.WriteLine("brak elementow");
+                        else
+                        {
+                            Console.Write("podaj numer do usuniecia: ");
+                            numer = Convert.ToInt32(Console.ReadLine());
+                            if ((numer <= licznik) && (numer > 0))
+                            {
+                                Console.WriteLine("usunieto: {0}", owoce[numer - 1]);
+                                if (licznik == 1) licznik = 1;
+                                else
+                                {
+                                    for (i = numer - 1; i < licznik - 1; i++) owoce[i] = owoce[i + 1];
+                                    licznik--;
+                                }
+                            }
+                            else Console.WriteLine("blad");
+                        }
+
+                        break;
+                    case 4: //wypisywanie
+                        Console.WriteLine("wszystkie owoce: ");
+                        for (i = 0; i < licznik; i++)
+                            Console.WriteLine("{0}. {1}", i+1, owoce[i]);
+                        break;
+                    default: Console.WriteLine("blad"); break;
+                }
+            } while (wybor != 0);
+
+            Console.ReadKey(true);
+        }
+    }
+}
