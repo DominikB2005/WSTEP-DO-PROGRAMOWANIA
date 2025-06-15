@@ -1,16 +1,24 @@
-using System;
+// Napisać program wczytujący ciąg n (1<=n<=1000) liczb całkowitych (dodatnich i ujemnych) i
+// wypisujący wczytane liczby na ekranie.
 
-namespace zadanie1
+int[] tab = new int[1000]; // tablica zawierajaca 1000 liczb typu int
+int i, n; // i-licznik petli  n- ilosc elementow tablicy
+Console.WriteLine("Podaj ilość elementów tablicy gdzie 1<=n<=1000: ");
+n = Convert.ToInt32(Console.ReadLine());
+
+//wczytywanie n elementow do tablicy
+for (i = 0; i < n; i++)
 {
-    class Program
-    {
-        static void Main( string[] args)
-        {
-            //Napisać program wypisujący na ekranie tekst "Witaj Świecie".
-
-            Console.WriteLine("Witaj Świecie");
-            Console.ReadKey(true);
-
-        }
-    }
+    Console.WriteLine("podaj tab[{0}]= ", i);
+    tab[i] = Convert.ToInt32(Console.ReadLine());
 }
+
+//wyswietlanie elementow tablicy na ekranie
+
+Console.Write("elementy tablicy: ");
+for (i = 0; i < n; i++)
+{
+    Console.Write("{0} ", tab[i]);
+}
+
+Console.ReadKey(true);
