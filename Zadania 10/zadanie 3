@@ -1,0 +1,30 @@
+//W pliku C:\tmp\liczby2.txt znajduje się kilkanaście liczb rzeczywistych (nie wiemy ile).
+// Odczytaj je i wypisz ich sumę na ekranie.
+// Zakładamy, że plik C:\tmp\liczby2.txt istnieje i posiada potrzebne dane.
+// Ponadto zakładamy, że każda liczba w pliku znajduje się w osobnym wierszu.
+
+using System;
+using System.IO;
+
+namespace zadanie3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string s, nazwa = @"c:\tmp\liczby2.txt";
+            double suma = 0;
+            FileStream plik = new FileStream(nazwa, FileMode.Open, FileAccess.Read, FileShare.None);
+            System.IO.StreamReader odczyt = new StreamReader(plik);
+
+            while ((s = odczyt.ReadLine()) != null)
+            {
+                suma += Convert.ToDouble(s);
+            }
+
+            odczyt.Close();
+            plik.Close();
+            Console.WriteLine("suma liczb = {0}", suma);
+            Console.ReadKey(true);
+        }
+    }
