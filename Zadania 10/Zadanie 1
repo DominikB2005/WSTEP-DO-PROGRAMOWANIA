@@ -1,1 +1,27 @@
+//Wczytaj od użytkownika liczbę naturalną n (n>2). Wpisz do pliku C:\tmp\wynik1.txt wartość
+// sumy 1+…+n. Zakładamy, że plik C:\tmp\wynik1.txt nie istnieje.
 
+using System;
+using System.IO;
+
+namespace zadanie1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i, n, suma = 0;
+                Console.Write("podaj n: ");
+                n = Convert.ToInt32(Console.ReadLine());
+                for (i = 1; i <= n; i++) suma += i;
+
+                string nazwa = @"c:\tmp\wyniki1.txt";
+                FileStream plik = new FileStream(nazwa, FileMode.Create, FileAccess.Write, FileShare.None);
+                System.IO.StreamWriter zapis = new StreamWriter(plik);
+                zapis.WriteLine(suma);
+                zapis.Close();
+                plik.Close();
+                Console.ReadKey(true);
+        }
+    }
+}
