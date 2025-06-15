@@ -1,0 +1,35 @@
+//Napisz funkcję, która posiada parametr będący liczbą naturalną zapisaną w systemie
+// dziesiętnym, zamienia go na liczbę zapisaną w systemie ósemkowym i zwraca wyznaczoną
+// liczbę jako wartość funkcji. Napisz program testujący utworzoną funkcję.
+
+using System;
+
+namespace zadanie_12
+{
+    class Program
+    {
+        static string ZamianaNaOsemkowy(int liczba)
+        {
+            if (liczba == 0)
+                return "0";
+
+            string wynik = "";
+            while (liczba > 0)
+            {
+                int reszta = liczba % 8;
+                wynik = reszta + wynik;
+                liczba /= 8;
+            }
+            return wynik;
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("8 w systemie osmekowym to {0}", ZamianaNaOsemkowy(8));     
+            Console.WriteLine("64 w systemie osemkowym to  {0}", ZamianaNaOsemkowy(64));   
+            Console.WriteLine("255 w systemie osemkowym to {0}", ZamianaNaOsemkowy(255)); 
+            Console.WriteLine("0 w systemie osemkowym to {0}", ZamianaNaOsemkowy(0));     
+
+            Console.ReadKey(true);
+        }
+    }
+}
