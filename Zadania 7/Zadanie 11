@@ -1,0 +1,35 @@
+//Napisać funkcję o nazwie NWW zwracającą wartość najmniejszej wspólnej wielokrotności dla
+// jej dwóch argumentów będących liczbami naturalnymi.
+// Napisz program testujący utworzoną funkcję.
+// Wskazówka: NWW(a,b)=a*b/NWD(a,b).
+
+using System;
+namespace zadanie_11
+{
+    class Program
+    {
+        static int NWD(int a, int b)
+        {
+            while (b != 0)
+            {
+                int reszta = a%b;
+                a = b;
+                b = reszta;
+            }
+
+            return a;
+        }
+
+        static int NWW(int a, int b)
+        {
+            return (a*b)/NWD(a, b);
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("NWW liczb 6 i 4 wynosi {0}", NWW(6,4));
+            Console.WriteLine("NWW liczb 14 i 8 wynosi {0}", NWW(14,8));
+            Console.ReadKey(true);
+        }
+    }
+}
