@@ -1,0 +1,9 @@
+//Zadeklaruj tablicę zawierającą nazwy dni tygodnia. Wypisz elementy tablicy za pomocą pętli
+// foreach.
+string[] dni = new string[] {"poniedzialek", "wtorek", "sroda", "czwartek", "piatek", "sobota", "niedziela"};
+
+foreach (string element in dni)
+{
+    Console.Write("{0} ",element);
+}
+Console.ReadKey(true);
