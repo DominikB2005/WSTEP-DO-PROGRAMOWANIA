@@ -1,0 +1,20 @@
+// Wczytaj liczbę naturalną n i wypisz na ekranie tą liczbę w systemie dwójkowym.
+
+int[] tab = new int[1000];
+int i, j, liczba;
+i=0;
+Console.Write("podaj liczbe naturalna: ");
+liczba = Convert.ToInt32(Console.ReadLine());
+
+//zapisanie do tablicy reszty z dzielenia przez 2
+while ((liczba / 2 != 0) || (liczba / 2 == 0) && (liczba % 2 != 0))
+{
+ tab[i++] = liczba%2;
+ liczba = liczba / 2;
+}
+
+for (j = i - 1; j >= 0; j--)
+{
+ Console.Write(tab[j]);
+}
+Console.ReadKey(true);
