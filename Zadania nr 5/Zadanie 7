@@ -1,0 +1,41 @@
+using System;
+
+namespace zadanie5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Wczytaj liczbę naturalną n>1 i wypisz wszystkie liczby pierwsze z przedziału [1,n].
+
+            int n, i, j, liczby;
+            Console.Write("podaj n: ");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            
+
+            for (j = 1; j <= n; j++)
+            {
+                i = 2;
+                if (n < 2)
+                    Console.Write("");
+                else
+                {
+                    while (i * i <= n && n % i != 0)
+                    {
+                        i++;
+                    }
+
+                    if (i * i > n)
+                        Console.Write("{0}, ", i);
+                    else
+                        Console.Write("");
+                }
+
+                j++;
+            }
+
+            Console.ReadKey(true);
+        }
+        }
+    }
