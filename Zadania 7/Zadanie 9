@@ -1,0 +1,24 @@
+//Napisać funkcję, która posiada trzy argumenty będące współczynnikami a, b, c funkcji
+// kwadratowej y = ax2 + bx + c. Funkcja ma zwracać ilość pierwiastków zadanej funkcji
+// kwadratowej. Napisz program testujący utworzoną funkcję.
+using System;
+namespace zadanie_9
+{
+    class Program
+    {
+        static double pierwiastki(double a, double b, double c)
+        {
+            if (b * b - 4 * a * c > 0) return 2;
+            else if (b * b - 4 * a * c == 0) return 1;
+            else return 0;
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("rownanie x^2 - 5x + 6 = 0 ma {0} pierwiastki", pierwiastki(1,-5,6));
+            Console.WriteLine("rownanie x^2 - 4x + 4 = 0 ma {0} pierwiastek", pierwiastki(1,-4,4));
+            Console.WriteLine("rownanie x^2 + 2x + 5 = 0 ma {0} pierwiastkow", pierwiastki(1,2,5));
+            Console.ReadKey(true);
+        }
+    }
+}
