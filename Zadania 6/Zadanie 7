@@ -1,0 +1,29 @@
+//Napisać program wczytujący ciąg n (1<=n<=1000) liczb całkowitych i wypisujący na ekranie
+// najmniejszą i największą wczytaną liczbę.
+int[] tab = new int[1000];
+int i, n, najwieksza, najmniejsza, liczba;
+
+Console.Write("podaj ilosc elementów ciagu gdzie 1<=n<=1000: ");
+n = Convert.ToInt32(Console.ReadLine());
+
+//wczytywanie do tablicy
+for (i = 0; i < n; i++)
+{
+    Console.Write("podaj tab[{0}]: ", i);
+    tab[i] = Convert.ToInt32(Console.ReadLine());
+}
+
+najwieksza = tab[0];
+najmniejsza = tab[0];
+for (i = 1; i < n; i++)
+{
+    if (tab[i] > najwieksza)
+        najwieksza = tab[i];
+        
+    if (tab[i] < najmniejsza)
+        najmniejsza = tab[i];
+       
+}
+Console.WriteLine("najwieksza: {0}", najwieksza);
+Console.WriteLine("najmniejsza: {0}", najmniejsza);
+Console.ReadKey(true);
