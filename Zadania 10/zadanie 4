@@ -1,0 +1,38 @@
+//Na dowolnych przykładach przećwicz zapis i odczyt z plików tekstowych liczb i łańcuchów
+// znaków.
+
+using System;
+using System.IO;
+
+namespace zadanie4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string nazwa = @"c:\tmp\liczby2.txt";
+            double suma = 0;
+            
+            using (StreamWriter zapis = new StreamWriter(nazwa))
+            {
+                zapis.WriteLine(12.5);
+                zapis.WriteLine(3.14);
+                zapis.WriteLine(7.3);
+                zapis.WriteLine(-2.1);
+                zapis.WriteLine(10);
+            }
+            
+            using (StreamReader odczyt = new StreamReader(nazwa))
+            {
+                string linia;
+                while ((linia = odczyt.ReadLine()) != null)
+                {
+                    suma += Convert.ToDouble(linia);
+                }
+            }
+
+            Console.WriteLine("suma liczb: {0}", suma);
+            Console.ReadKey(true);
+        }
+    }
+}
