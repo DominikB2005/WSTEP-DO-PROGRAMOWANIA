@@ -1,0 +1,21 @@
+//Napisz funkcję posiadającą dwa argumenty: p, q – długości przekątnych deltoidu. Funkcja ma
+// zwracać pole deltoidu dla zadanych argumentów. Napisz program testujący utworzoną
+// funkcję.
+// Wskazówka: P=p*q/2.
+using System;
+namespace zadanie_7
+{
+    class Program
+    {
+        static double pole_deltoidu(double p, double q)
+        {
+            return (p * q) / 2;
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("pole deltoidu o przekatnych 1 i 2 wynosi {0}", pole_deltoidu(1, 2));
+            Console.ReadKey(true);
+        }
+    }
+}
