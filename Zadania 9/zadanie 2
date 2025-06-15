@@ -1,0 +1,53 @@
+//Zdefiniuj strukturę o nazwie Uczen zawierającą pola: imie, nazwisko i tablice ocen.
+// Pobierz od użytkownika liczbę uczniów i zadeklaruj odpowiednią tablicę struktur
+// umożliwiającą przechowanie informacji o imionach, nazwiskach i ocenach uczniów.
+// Następnie pobierz dane od użytkownika i w sposób czytelny wypisz wszystko na ekranie.
+
+using System;
+namespace zadanie2
+{
+    struct uczen
+    {
+        public string imie, nazwisko;
+        public byte[] oceny;
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            uczen[] uczniowie;
+            int i, j, licznikUczniowie, licznikOceny;
+            Console.Write("podaj liczbe uczniow w klasie: ");
+            licznikUczniowie = Convert.ToInt32(Console.ReadLine());
+            uczniowie = new uczen[licznikUczniowie];
+            for (i = 0; i < licznikUczniowie; i++)
+            {
+                Console.Write("podaj imie ucznia {0}: ", i+1);
+                uczniowie[i].imie = Console.ReadLine();
+                Console.Write("podaj nazwisko ucznia {0}: ", i+1);
+                uczniowie[i].nazwisko = Console.ReadLine();
+                Console.Write("ile ocen ma {0} {1}: ", uczniowie[i].imie, uczniowie[i].nazwisko);
+                licznikOceny = Convert.ToInt32(Console.ReadLine());
+                uczniowie[i].oceny = new byte[licznikOceny];
+
+                for (j = 0; j < licznikOceny; j++)
+                {
+                    Console.Write("podaj ocene numer {0} ", j+1);
+                    uczniowie[i].oceny[j] = Convert.ToByte(Console.ReadLine());
+                }
+                Console.WriteLine();
+            }
+
+            for (i = 0; i < licznikUczniowie; i++)
+            {
+                Console.Write("{0}. {1} {2}", i + 1, uczniowie[i].imie, uczniowie[i].nazwisko);
+                foreach (byte oceny in uczniowie[i].oceny)
+                    Console.Write("{0}", oceny);
+                Console.WriteLine("");
+            }
+
+            Console.ReadKey(true);
+        }
+    }
+}
