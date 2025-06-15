@@ -1,0 +1,22 @@
+using System;
+
+namespace zadanie1
+{
+    class Program
+    {
+        static void Main( string[] args)
+        {
+            // Napisać program wczytujący promień koła i wypisujący na ekranie jego pole i obwód.
+            double r, Pole, Obwod;
+            Console.Write("podaj r: ");
+            r = Convert.ToDouble(Console.ReadLine());
+            // Pole = pi*r^2
+            Pole = Math.PI * r * r;
+            // Obwod = 2*pi*r
+            Obwod = 2*Math.PI * r;
+            Console.WriteLine("Pole = {0}", Pole);
+            Console.WriteLine("Obwod = {0}", Obwod);
+            Console.ReadKey(true);
+        }
+    }
+}
