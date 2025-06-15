@@ -1,0 +1,29 @@
+//Napisać funkcję o nazwie NWD zwracającą wartość największego wspólnego dzielnika dla jej
+// dwóch argumentów będących liczbami naturalnymi.
+// Napisz program testujący utworzoną funkcję.
+
+using System;
+namespace zadanie_10
+{
+    class Program
+    {
+        static int NWD(int a, int b)
+        {
+            while (b != 0)
+            {
+                int reszta = a%b;
+                a = b;
+                b = reszta;
+            }
+
+            return a;
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("NWD liczb 50 i 5 wynosi {0}", NWD(50,5));
+            Console.WriteLine("NWD liczb 10 i 4 wynosi {0}", NWD(10,4));
+            Console.ReadKey(true);
+        }
+    }
+}
