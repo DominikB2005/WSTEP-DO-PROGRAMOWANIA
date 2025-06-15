@@ -1,1 +1,32 @@
+//Zdefiniuj strukturę o nazwie Osoba posiadającą trzy pola: imie, nazwisko i rok
+// urodzenia.
+// _
+// Zadeklaruj zmienną typu strukturalnego o nazwie o, wczytaj do niej wszystkie wartości pól od
+// użytkownika i wypisz wszystkie pobrane wartości pól na ekranie.
 
+using System;
+namespace zadanie1
+{
+    struct osoba
+    {
+        public string imie, nazwisko;
+        public int rok_urodzenia;
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            osoba a;
+            Console.Write("podaj imie: ");
+            a.imie = Console.ReadLine();
+            Console.Write("podaj nazwisko: ");
+            a.nazwisko = Console.ReadLine();
+            Console.Write("podaj rok_urodzenia: ");
+            a.rok_urodzenia = Convert.ToInt32(Console.ReadLine());
+            
+            Console.WriteLine("{0} {1} urodzil/a sie w {2} roku", a.imie, a.nazwisko, a.rok_urodzenia);
+            Console.ReadKey(true);
+        }
+    }
+}
