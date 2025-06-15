@@ -1,0 +1,27 @@
+//Dany jest ciąg rekurencyjny: {
+// a(1) = 1
+// a(n+1) = (an )2 - 3
+// Wczytaj od użytkownika liczbę całkowitą n i wypisz na ekranie wartość ciągu an. 
+
+using System;
+
+namespace zadanie_4
+{
+    class Program
+    {
+        static long ciag(long n)
+        {
+            if (n == 1) return 1;
+            else return ciag(n - 1) * ciag(n - 1) - 3;
+        }
+
+        static void Main(string[] args)
+        {
+            Console.Write("podaj wartosc n: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            if (n<1) Console.WriteLine("blad");
+            Console.WriteLine("a({0}) = {1}", n, ciag(n));
+            Console.ReadKey(true);
+        }
+    }
+}
