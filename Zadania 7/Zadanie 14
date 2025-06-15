@@ -1,0 +1,48 @@
+//Napisz funkcję, która stwierdza, czy zadana jako argument liczba całkowita kończy się swoim
+// pierwiastkiem. Liczby kończące się swoim pierwiastkiem to np.: 25, 625. Wartością funkcji ma
+// być jeden, jeśli liczba spełnia warunek lub zero w przeciwnym przypadku.
+// Napisz program testujący utworzoną funkcję.
+
+using System;
+
+namespace zadanie_14
+{
+    class Program
+    {
+        static int czy_koniec_kw(int liczba)
+        {
+            if (liczba < 0) return 0;
+
+            for (int i = 0; i * i <= liczba; i++)
+            {
+                if (i * i == liczba)
+                {
+                    int pierwiastek = i;
+                    int temp = pierwiastek;
+                    int dzielnik = 1;
+
+                    while (temp > 0)
+                    {
+                        dzielnik *= 10;
+                        temp /= 10;
+                    }
+                    if (liczba % dzielnik == pierwiastek)
+                        return 1;
+                }
+            }
+
+            return 0;
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("25: {0}", czy_koniec_kw(25));     
+            Console.WriteLine("625: {0}", czy_koniec_kw(625));  
+            Console.WriteLine("36: {0}", czy_koniec_kw(36));    
+            Console.WriteLine("100: {0}", czy_koniec_kw(100));   
+            Console.WriteLine("121: {0}", czy_koniec_kw(121));   
+
+            Console.ReadKey(true);
+        }
+    }
+}
