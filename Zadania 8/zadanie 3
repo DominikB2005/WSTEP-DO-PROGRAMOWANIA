@@ -1,0 +1,31 @@
+//Zaimplementuj funkcję rekurencyjną zadaną wzorem:
+// n dla n < 1
+// f(n) = 1 dla n = 1
+// 2 ∗ f(n - 1) + 1 dla n > 1
+// Napisz program testowy pobierający od użytkownika wartość liczby całkowitej n i wypisujący
+// na ekranie wartość funkcji f(n).
+// Oblicz na kartce papieru wartości funkcji f(3) i f(f(3)). Za pomocą napisanego programu
+// testowego sprawdź, czy otrzymałeś poprawne wyniki.
+
+using System;
+
+namespace zadanie_3
+{
+    class Program
+    {
+        static long funkcja(long n)
+        {
+            if (n < 1) return n;
+            else if (n == 1) return 1;
+            else return (2 * funkcja(n - 1) + 1);
+        }
+
+        static void Main(string[] args)
+        {
+            Console.Write("podaj wartosc n: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("f({0}) = {1}", n, funkcja(n));
+            Console.ReadKey(true);
+        }
+    }
+}
